@@ -1,0 +1,147 @@
+<main id="templateEditor">
+  
+  <div id="template-wrapper">
+    <nav class="btn-toolbar" role="toolbar">
+      <div class="btn-group" data-toggle="buttons">
+        <button id="toggleEdit" class="btn btn-primary btn-xs" type="button" data-toggle="collapse" data-target=".btn-toolbar.collapse, .btn-group.collapse" aria-expanded="false">
+          Toggle Edit
+        </button>
+      </div>
+      <div class="btn-group collapse" role="group">
+        <button type="button" class="btn btn-success btn-xs js_add" data-target="#template-wrapper" data-template="row">Add row</button>
+      </div>
+    </nav>
+  </div>
+</main>
+<div id="templates" class="hidden">
+  <div class="row" id="template_row" data-id="" data-base_class="row" data-class="">
+    <nav class="btn-toolbar collapse" role="toolbar">
+      <div class="btn-group structure" role="group">
+        <button type="button" class="btn btn-success btn-xs js_add" data-target=".row" data-template="block">Add block</button>
+      </div>
+      <div class="btn-group" rx 1 (pre-checked)ole="group">
+        <button type="button" class="btn btn-warning btn-xs js_edit">Edit</button>
+      </div>
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-danger btn-xs js_delete">X</button>
+      </div>
+    </nav>
+  </div>
+  <div class="block col-xs-6" id="template_block" data-base_class="block" data-id="" data-block_name="" data-class="" data-grid_xs="6" data-grid_sm="6" data-grid_md="6" data-grid_lg="6">
+    <nav class="btn-toolbar collapse" role="toolbar">
+      <div class="btn-group structure" role="group">
+        <button type="button" class="btn btn-success btn-xs js_add" data-target=".block" data-template="row">Add row</button>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-warning btn-xs js_edit">Edit</button>
+      </div>
+      <div class="btn-group pull-right">
+        <button type="button" class="btn btn-danger btn-xs js_delete">X</button>
+      </div>
+    </nav>
+  </div>
+</div>
+<div class="modal fade" id="editBlockModal" tabindex="-1" role="dialog" aria-labelledby="editBlockLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="editBlockLabel">Edit</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" class="row">
+          <div class="form-group col-xs-12 col-sm-6" id="setting_id">
+            <label for="setting_input_id">ID</label>
+            <input type="text" data-attr="id" class="form-control" id="setting_input_id">
+          </div>
+          
+          <div class="form-group col-xs-12 col-sm-6" id="setting_block_name">
+            <label for="setting_input_block_name">Block name</label>
+            <input type="text" data-attr="name" class="form-control" id="setting_input_block_name">
+          </div>
+          
+          <div class="form-group col-xs-12" id="setting_class">
+            <label for="setting_input_class">Class</label>
+            <input type="text" data-attr="class" class="form-control" id="setting_input_class">
+          </div>
+          
+          <div class="form-group col-xs-6 col-sm-3" id="setting_grid_xs">
+            <label for="setting_input_grid_xs">Grid xs</label>
+            <select data-attr="class" class="form-control" id="setting_input_grid_xs">
+              <option value="col-xs-1">1</option>
+              <option value="col-xs-2">2</option>
+              <option value="col-xs-3">3</option>
+              <option value="col-xs-4">4</option>
+              <option value="col-xs-5">5</option>
+              <option value="col-xs-6">6</option>
+              <option value="col-xs-7">7</option>
+              <option value="col-xs-8">8</option>
+              <option value="col-xs-9">9</option>
+              <option value="col-xs-10">10</option>
+              <option value="col-xs-11">11</option>
+              <option value="col-xs-12">12</option>
+            </select>
+          </div>
+          
+          <div class="form-group col-xs-6 col-sm-3" id="setting_grid_sm">
+            <label for="setting_input_grid_sm">Grid sm</label>
+            <select data-attr="class" class="form-control" id="setting_input_grid_sm">
+              <option value="col-sm-1">1</option>
+              <option value="col-sm-2">2</option>
+              <option value="col-sm-3">3</option>
+              <option value="col-sm-4">4</option>
+              <option value="col-sm-5">5</option>
+              <option value="col-sm-6">6</option>
+              <option value="col-sm-7">7</option>
+              <option value="col-sm-8">8</option>
+              <option value="col-sm-9">9</option>
+              <option value="col-sm-10">10</option>
+              <option value="col-sm-11">11</option>
+              <option value="col-sm-12">12</option>
+            </select>
+          </div>
+          
+          <div class="form-group col-xs-6 col-sm-3" id="setting_grid_md">
+            <label for="setting_input_grid_md">Grid md</label>
+            <select data-attr="class" class="form-control" id="setting_input_grid_md">
+              <option value="col-md-1">1</option>
+              <option value="col-md-2">2</option>
+              <option value="col-md-3">3</option>
+              <option value="col-md-4">4</option>
+              <option value="col-md-5">5</option>
+              <option value="col-md-6">6</option>
+              <option value="col-md-7">7</option>
+              <option value="col-md-8">8</option>
+              <option value="col-md-9">9</option>
+              <option value="col-md-10">10</option>
+              <option value="col-md-11">11</option>
+              <option value="col-md-12">12</option>
+            </select>
+          </div>
+          
+          <div class="form-group col-xs-6 col-sm-3" id="setting_grid_lg">
+            <label for="setting_input_grid_lg">Grid lg</label>
+            <select data-attr="class" class="form-control" id="setting_input_grid_lg">
+              <option value="col-lg-1">1</option>
+              <option value="col-lg-2">2</option>
+              <option value="col-lg-3">3</option>
+              <option value="col-lg-4">4</option>
+              <option value="col-lg-5">5</option>
+              <option value="col-lg-6">6</option>
+              <option value="col-lg-7">7</option>
+              <option value="col-lg-8">8</option>
+              <option value="col-lg-9">9</option>
+              <option value="col-lg-10">10</option>
+              <option value="col-lg-11">11</option>
+              <option value="col-lg-12">12</option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" id="edit-save" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
